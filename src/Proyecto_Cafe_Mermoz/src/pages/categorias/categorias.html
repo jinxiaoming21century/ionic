@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar color="twitter">
+    <ion-title >Nuevo pedido</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-item color="fondo3">
+    <ion-label  color="fondo2" large>Numero de mesa</ion-label>
+    <ion-input type="number" [(ngModel)]="mesa"></ion-input>
+  </ion-item>
+
+<ion-list>
+  <button ion-item color="fondo2" large
+          *ngFor="let categoria of _ps.lineas"
+          [navPush]="porCategorias"
+          [navParams]="{ categoria: categoria}">
+
+          <ion-icon [name]="categoria.icono" item-left></ion-icon>
+          {{categoria.linea}}
+  </button>
+</ion-list>
+
+</ion-content>

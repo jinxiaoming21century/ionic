@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="twitter">
+    <ion-title style="color:white; text-align: center;" large>Iniciar sesion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding color="fondo2" class="myphoto"  >
+  <ion-list>
+   <ion-item>
+     <ion-label fixed color="fondo2" large>Usuario</ion-label >
+     <ion-input type="email" [(ngModel)] ="correo" ></ion-input>
+   </ion-item>
+
+   <ion-item>
+     <ion-label  fixed color="fondo2" large>Contraseña</ion-label>
+     <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+   </ion-item>
+  </ion-list>
+
+  <button ion-button [disabled]=" correo.length < 5 ||  contrasena.length < 5 " block (click)="ingresar()" color="fondo2" large >Iniciar Sesión</button>
+  <img width="600" height="250" class="center" src="http://localhost/rest/public/img/productos/mermoz.jpg" >
+
+
+</ion-content>

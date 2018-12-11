@@ -1,0 +1,9 @@
+my-component {
+  background: color($colors, twitter, base);
+}
+h1.my-title{
+  background: color($colors, twitter, contrast);
+}
+h1.my-subtitle{
+  background: color($colors, primary);
+}

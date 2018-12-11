@@ -1,5 +1,7 @@
 {
   "name": "Proyecto_Cafe_Mermoz",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

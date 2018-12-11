@@ -1,0 +1,69 @@
+
+<ion-header>
+
+  <ion-navbar color="twitter">
+    <ion-title>{{producto.producto}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <img width="1000" height="500"  [src]="producto.codigo | imagen">
+
+
+  <div padding color="fondo2">
+    <h5>{{producto.producto}}</h5>
+    <p>
+      <strong></strong> {{ producto.precio_compra | currency:'Precio ':true}}
+    </p>
+    <p>
+      {{producto.producto}}
+      <br>
+      <strong>{{producto.proveedor}}</strong>
+    </p>
+    <ion-list radio-group [(ngModel)]="autoManufacturers">
+
+  <ion-list-header>
+    Acompañamientos
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Arroz</ion-label>
+    <ion-radio value="cord"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Papas</ion-label>
+    <ion-radio value="duesenberg"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Mixta</ion-label>
+    <ion-radio value="hudson"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ensalada</ion-label>
+    <ion-radio value="packard"></ion-radio>
+    <ion-input type="Text Input" ></ion-input>
+
+  </ion-item>
+
+</ion-list>
+
+    <button ion-button color="fondo2" icon-left
+            (click)="_cs.agregar_carrito(producto)" large>
+      <ion-icon name="cart"></ion-icon>
+      Agregar a la venta
+    </button>
+
+
+
+
+
+
+    </div>
+
+</ion-content>

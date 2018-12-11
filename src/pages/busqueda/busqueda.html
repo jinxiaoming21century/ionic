@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="twitter">
+    <ion-title>Busqueda de pedidos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-searchbar  color="twitter" (ionInput)="buscar_pedidos($event)"></ion-searchbar>
+
+  <ion-list color="fondo2">
+    <ion-item *ngFor="let item of _cs.resultados"
+              [navPush]="ordenesDetallePage"
+              [navParams]="{ ordenes: item }">
+      Mesa {{ item.mesa}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>

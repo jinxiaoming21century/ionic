@@ -1,0 +1,54 @@
+
+<ion-header>
+  <ion-navbar color="twitter">
+
+
+    <ion-title>Detalle venta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center *ngIf="_cs.items.length == 0" class="carrito_vacio">
+    <ion-icon name="ios-cart-outline" class="icon-5x"></ion-icon>
+
+    <br />
+
+    No hay pedidos activos
+  </div>
+
+  <div *ngIf="_cs.items.lenght != 0" color="fondo2">
+    <ion-grid>
+      <ion-row *ngFor="let item of _cs.items; let i =index">
+        <ion-col>
+          <img [src]="item.codigo | imagen">
+        </ion-col>
+
+        <ion-col color="fondo2">
+          <p>{{ item.producto }}</p>
+          <p>{{ item.precio_compra | currency:'PESOS':true }}</p>
+
+          <button ion-button color="danger" outLine block small (click)="_cs.remover_item(i)">
+            Eliminar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <hr />
+
+    <ion-grid color="twitter">
+      <ion-row>
+        <ion-col>
+          <h3>
+            <strong>Total: </strong>
+            {{ _cs.total_carrito| currency:'Pesos ':true }}
+          </h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button ion-button block (click)="_cs.realizar_pedido()">
+      Enviar pedido a cocina
+    </button>
+  </div>
+</ion-content>
